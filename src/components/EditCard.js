@@ -54,7 +54,7 @@ export default function EditCard({ sensorId, positionState }) {
  
     
  
-    await fetch('https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/update/places', {
+    await fetch('https://back-pure-space.vercel.app/update/places', {
         method: 'PATCH',
         body: formData
   })

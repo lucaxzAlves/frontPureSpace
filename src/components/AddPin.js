@@ -55,7 +55,7 @@ export default function AddCard({ positionState }) {
  
     
  
-    await fetch('https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/send/places', {
+    await fetch('https://back-pure-space.vercel.app/send/places', {
         method: 'POST',
         body: formData
   }) 

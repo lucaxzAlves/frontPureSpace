@@ -6,7 +6,7 @@ export function PlacesProvider({ children }) {
   const [places, setPlaces] = useState([]);
 
   async function fetchPlaces() {
-    const response = await fetch('https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/api/places');
+    const response = await fetch('https://back-pure-space.vercel.app/api/places');
     const data = await response.json();
     setPlaces(data);
   }

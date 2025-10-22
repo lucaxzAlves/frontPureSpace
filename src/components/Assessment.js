@@ -7,7 +7,7 @@ export default function Assessment({ id, dataKey, date }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/api/medias${date}/${id}?timestamp=${Date.now()}`);
+      const response = await fetch(`https://back-pure-space.vercel.app/api/medias${date}/${id}?timestamp=${Date.now()}`);
       const dataMedia = await response.json();
 
       const data = dataMedia.map(d => parseFloat(d[dataKey]));

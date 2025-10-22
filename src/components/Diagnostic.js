@@ -13,7 +13,7 @@ export default function Diagnostic({ id }) {
    
    useEffect(() => {
   const fetchData = async () => {
-    const response = await fetch(`https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/api/atual/${id}`);
+    const response = await fetch(`https://back-pure-space.vercel.app/api/atual/${id}`);
     const dataMedia = await response.json();
 
     const temp = dataMedia.map(d => parseFloat(d.temp));

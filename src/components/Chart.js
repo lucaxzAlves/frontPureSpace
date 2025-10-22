@@ -16,7 +16,7 @@ export default function Chart({ id, dataKey, date }) {
 
  const fetchData = async () => {
   try {
-    const response = await fetch(`https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/api/medias${date}/${id}?timestamp=${Date.now()}`);
+    const response = await fetch(`https://back-pure-space.vercel.app/api/medias${date}/${id}?timestamp=${Date.now()}`);
     const dataMedia = await response.json();
 
   

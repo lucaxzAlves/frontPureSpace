@@ -16,7 +16,7 @@ export default function SideCard({ places, Id, position }) {
   useEffect(() => {
     if (Id || Id === '0') {
       const fetchSensorData = async () => {
-        const response = await fetch(`https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/api/atual/${Id}`);
+        const response = await fetch(`https://back-pure-space.vercel.app/api/atual/${Id}`);
         const data = await response.json();
         setData(data[0]);
       };
@@ -67,7 +67,7 @@ export default function SideCard({ places, Id, position }) {
  
   async function handleDelete() {
  
-  await fetch(`https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/delete/places/${Id}`, {
+  await fetch(`https://back-pure-space.vercel.app/delete/places/${Id}`, {
     method: 'DELETE'
   })
   .then(response => {
