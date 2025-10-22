@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lucaxzAlves/frontPureSpace/static/css/main.b56b6270.css",
+    "main.js": "/lucaxzAlves/frontPureSpace/static/js/main.9b4235c6.js",
+    "index.html": "/lucaxzAlves/frontPureSpace/index.html",
+    "main.b56b6270.css.map": "/lucaxzAlves/frontPureSpace/static/css/main.b56b6270.css.map",
+    "main.9b4235c6.js.map": "/lucaxzAlves/frontPureSpace/static/js/main.9b4235c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b56b6270.css",
+    "static/js/main.9b4235c6.js"
+  ]
+}
