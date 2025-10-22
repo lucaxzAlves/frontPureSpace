@@ -1,13 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import { usePlacesList } from "../placesContext";
 import '../styles/graphic.css'
 import Chart from "../components/Chart";
 import Assessment from "../components/Assessment";
 import Diagnostic from "../components/Diagnostic";
-import ScrollReveal from "scrollreveal";
 
 export default function Graphic() {
  

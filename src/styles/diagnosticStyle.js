@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import React, { useState, useEffect } from 'react';
 
 const colorMap = {
   vermelho: { border: '#dc2626', txt: '#b91c1c', message: '#fecaca' },

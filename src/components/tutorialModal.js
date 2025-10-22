@@ -1,23 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
 
-const tutorialCard = styled.section `
-width: 95%;
-  max-width: 1100px;
-  height: 130vh;
-  color: whitesmoke;
-  background-color: #1e1e27;
-  backdrop-filter: blur(6px);
-  border-left: 8px solid blue;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  margin: 10vh 30vh;
-  padding: 40px;
-   
- h1 {
-    font-size: 30px;
- }
-`
+
 
 export default function TutorialModal({ open, fecharModal }) {
       if (!open) return null;

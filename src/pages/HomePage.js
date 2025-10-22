@@ -6,7 +6,7 @@ import InitialPage from "../sectionComponents/initialPage";
 import Map from "../sectionComponents/Map";
 import Graphic from "../sectionComponents/Graphic";
 import About from "../sectionComponents/About";
-import ScrollReveal from "scrollreveal";
+
 
 import '../styles/globalstyle.css'
 
