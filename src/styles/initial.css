@@ -1,0 +1,95 @@
+.inicial {
+
+    height: 100vh;
+ }
+
+
+
+ .fotoifsp{
+    height: 100vh;      
+    width: 55vw;        
+    object-fit: cover;  
+    display: block;     
+    position: absolute;
+    top: 0;
+    left:45vw;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.textcapa{
+   
+    font-size: 1.7vw;
+    max-width: 45vw;
+  
+   
+}
+.logoInicial{
+    height: 5vw;
+    object-fit: cover;
+    left:54vw;
+    top:45vh;
+    position: relative;
+    margin-top: 6vh;
+   
+  
+    
+}
+.inicial h1{
+    text-decoration: none;
+    font-style: normal;
+    font-size: 5vw;
+    padding-top: 20vh;
+    margin-left: 2vw;
+
+}
+    .inicial p{
+      text-decoration: none;
+      font-style: normal;
+      
+      margin-left: 2vw;
+
+}
+.fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(41, 40, 55);
+    z-index: -1;
+}
+.logo{
+  height: 40vh;
+}
+
+
+
+ /*ANIMAÇÕES */
+ /*Hover logo */
+ .logohover{
+    transition: transform 1s ease;
+
+ }
+ .logohover:hover{
+    transform: scale(1.05);
+
+
+ }
+ /*SLIDE DO TEXTO DA CAPA*/
+@keyframes slide-right{0%{transform:translateX(-300px)}100%{transform:translateX(00px)}}
+.slide-right{animation:slide-right .7s cubic-bezier(.25,.46,.45,.94) both}
+      
+    
+  /*FADE DA LOGO */
+  
+  .fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+

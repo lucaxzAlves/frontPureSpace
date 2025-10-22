@@ -1,0 +1,209 @@
+.graficos {
+height: 280vh;
+width: 100%;
+background-color:  rgb(41, 40, 55);
+animation: information 0.5s ease-in-out;
+position: relative;
+ }
+
+.info-animation {
+  animation: information 0.5s ease-in-out;
+}
+
+@keyframes information {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+ .graifico img {
+ width: 15.1vw;
+ }
+
+ .abas {
+ display: flex;
+ height: 7.55vh;
+ width: 100%;
+ font-size: 1.5vw;
+ text-align: center;
+ align-items: center;
+ justify-content: center;
+ margin-top: 10vh;
+
+ position: absolute;
+ 
+ }
+
+ .abas h1 {
+padding: 0 10vh;
+position: relative;
+ transition: 0.5s;
+ animation: h1-animation 0.5s;
+ }
+
+.arrows {
+  width: 30px;
+  height: 30px;
+  border-top: 4px solid #6093e3;
+  border-right: 4px solid #6093e3;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  rotate: 220deg;
+
+}
+.arrows:hover {
+  transform: scale(1.3);
+  border-top: 4px solid #95b2e0;
+  border-right: 4px solid #95b2e0;
+}
+.arrow-right {
+  rotate: 40deg;
+}
+
+ @keyframes h1-animation {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+ }
+
+
+
+
+ .grafalign {
+      background: #182f4a;
+    
+      min-height: 120vh;
+      position: relative;     
+       flex-direction: column;
+      align-items: center;
+     
+    }
+
+
+   
+
+
+    .container {
+      width: 100%; 
+      max-width: 90%; /*960px se 1005 não ficar bom*/
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      height: 350vh;
+    }
+
+
+ 
+    .linha-graficos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      margin-left: 10vw;
+    }
+
+     .firtsGrafic {
+      margin-top: 200px;
+     }
+
+    .card {
+      background-color: #1e1e27;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(32, 77, 138, 0.15);
+      padding: 20px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+      width: 40vw;
+    }
+    .card:hover {
+      box-shadow: 0 10px 18px rgba(32, 77, 138, 0.3);
+    }
+
+    .card h2 {
+    color: #547dbd;
+    }
+
+  canvas {
+   background-color: rgb(215, 212, 212);
+  }
+
+ .graphic {
+  width: 100%; 
+  height: 250px;
+  position: relative;
+}
+
+    .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      color: #6093e3;
+      text-align: center;
+    }
+
+
+    .data-info {
+      font-size: 0.9rem;
+      color: #6a9dec;
+      margin-bottom: 15px;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* Avaliações */
+    .avaliacoes {
+      margin-top: 8px;
+      display: flex;
+      margin-left: 8vw;
+      gap: 12px;
+      user-select: none;
+      
+    }
+
+
+    .avaliacao {
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      max-width: 500px;
+      width: 500px;
+     margin-left: 105px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(32, 77, 138, 0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+
+    .avaliacao.ok {
+      background-color: #c8e6c9;
+      color: #2e7d32;
+    }
+
+
+    .avaliacao.atencao {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+
+    .avaliacao.perigo {
+      background-color: #f8d7da;
+      color: #a71d2a;
+    }
