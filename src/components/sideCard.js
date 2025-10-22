@@ -14,7 +14,7 @@ export default function SideCard({ places, Id, position }) {
   const refreshPlaces = useUpdatePlaces()
 
   useEffect(() => {
-    if (Id || Id == '0') {
+    if (Id || Id === '0') {
       const fetchSensorData = async () => {
         const response = await fetch(`https://back-pure-space-g4cnbh202-lucas-projects-27aead0d.vercel.app/api/atual/${Id}`);
         const data = await response.json();
