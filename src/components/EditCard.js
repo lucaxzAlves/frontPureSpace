@@ -79,7 +79,7 @@ export default function EditCard({ sensorId, positionState }) {
        document.body.style.cursor = 'default'
       
       } 
-     },[positionState])    
+     },[positionState, state])    
      
 if (sucess) {
       return (

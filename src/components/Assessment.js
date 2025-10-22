@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { amplitude, exedente, exedenteHum, tendencias } from "../util/avaliacao";
-import ScrollReveal from "scrollreveal";
+
 
 export default function Assessment({ id, dataKey, date }) {
   const [datas, setDatas] = useState([]);

@@ -71,6 +71,7 @@ export default function Chart({ id, dataKey, date }) {
     }, 3000);
 
     return () => clearInterval(interval); 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, date, dataKey]);
 
   

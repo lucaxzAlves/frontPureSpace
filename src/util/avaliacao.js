@@ -122,22 +122,16 @@ export function exedenteHum(values) {
 
 
 export function tendencias(values) {
-  
-  
+  const diferença = values[values.length - 1] - values[0];
 
-    const diferença = values[values.length - 1]    - values[0] 
-
-     let tendencia = ''
-
-
-   if (diferença > 5) {
-    return tendencia = 'aumento'
-   } else if (diferença < -5) {
-    return tendencia = 'baixa'
-   } else {
-    return tendencia = 'estabilizado'
-   }
- }
+  if (diferença > 5) {
+    return 'aumento';
+  } else if (diferença < -5) {
+    return 'baixa';
+  } else {
+    return 'estabilizado';
+  }
+}
 
 
 
@@ -178,6 +172,28 @@ let c = ''
 
 
  switch (combinacao) {
+   default:
+  return {
+    titulo: "❄️ Frio seco e bem ventilado",
+    explicacao: "Ambiente frio, seco e com boa ventilação. Desconfortável por longos períodos, mas não crítico.",
+    causas: [
+      "Clima externo frio e seco",
+      "Ventilação contínua",
+      "Pouco fluxo de pessoas"
+    ],
+    impacto: [
+      "Ressecamento das vias respiratórias",
+      "Rigidez muscular",
+      "Desconforto térmico"
+    ],
+    solucoes: [
+      "Alongamento pré-treino",
+      "Uso de roupas térmicas leves",
+      "Umidificação do ambiente se necessário"
+    ],
+    mensagem: "⚠️ Frio e seco. Aqueça-se e hidrate-se bem.",
+    cor: "amarelo"
+  };
     case '000':
   return {
     titulo: "❄️ Frio seco e bem ventilado",
@@ -596,28 +612,6 @@ case '505':
     mensagem: "✅ Ambiente confortável e bem ventilado.",
     cor: "verde"
   };
-case '510':
-  return {
-    titulo: "🌱 Temperatura média, umidade média e CO₂ baixo",
-    explicacao: "Ambiente equilibrado, ideal para exercícios intensos sem desconfortos evidentes.",
-    causas: [
-      "Boa circulação de ar",
-      "Controle da umidade",
-      "Fluxo controlado de pessoas"
-    ],
-    impacto: [
-      "Alto desempenho",
-      "Bem-estar geral",
-      "Estabilidade térmica"
-    ],
-    solucoes: [
-      "Manter condições atuais",
-      "Hidratar-se adequadamente",
-      "Evitar superlotação"
-    ],
-    mensagem: "✅ Ambiente ideal para treinos prolongados.",
-    cor: "verde"
-  };
 case '511':
   return {
     titulo: "🌫️ Temperatura e umidade médias, CO₂ alto",
@@ -750,50 +744,7 @@ case '510':
     mensagem: "✅ Ambiente ideal para treinos prolongados.",
     cor: "verde"
   };
-case '515':
-  return {
-    titulo: "🌫️ Temperatura média, umidade média e CO₂ alto",
-    explicacao: "Boa temperatura e umidade, mas alta concentração de CO₂ indica má ventilação. Atenção redobrada para circulação de ar.",
-    causas: [
-      "Ambiente fechado com muitas pessoas",
-      "Ventilação insuficiente",
-      "Atividade intensa sem pausas"
-    ],
-    impacto: [
-      "Fadiga precoce",
-      "Desconforto respiratório",
-      "Queda na produtividade"
-    ],
-    solucoes: [
-      "Aumentar ventilação",
-      "Fazer pausas para renovação do ar",
-      "Reduzir número de pessoas no ambiente"
-    ],
-    mensagem: "⚠️ CO₂ elevado. Ventile o ambiente regularmente.",
-    cor: "laranja"
-  };
-case '555':
-  return {
-    titulo: "🌪️ Ambiente instável: temperatura, umidade e CO₂ altos",
-    explicacao: "Variações constantes e níveis altos nos parâmetros indicam situação crítica de conforto e saúde.",
-    causas: [
-      "Superlotação",
-      "Má ventilação",
-      "Condições climáticas adversas"
-    ],
-    impacto: [
-      "Estresse térmico e respiratório",
-      "Redução significativa do desempenho",
-      "Maior risco de doenças"
-    ],
-    solucoes: [
-      "Reduzir ocupação",
-      "Melhorar ventilação e climatização",
-      "Intercalar treinos e pausas"
-    ],
-    mensagem: "⚠️ Ambiente crítico! Ventile e reduza a carga imediatamente.",
-    cor: "vermelho"
-  };
+
 
   }
 }
