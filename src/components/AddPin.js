@@ -30,7 +30,8 @@ export default function AddCard({ positionState }) {
     const desc = descRef.current.value;
     const img = imgRef.current.files[0]; 
       
-    
+
+
     const lastId = Number(places[places.length-1].id)
     const id = lastId+1
     
@@ -39,14 +40,14 @@ export default function AddCard({ positionState }) {
     positionJSON.left = `${positionPX.left}vw`
     positionJSON.top = `${positionPX.top}vh`
     
-   
+    const linkImg = await UploadImg(img)
 
     const formData = new FormData();
     formData.append('id', id.toString());
     formData.append('name', name);
     formData.append('desc', desc);
     formData.append('position', JSON.stringify(positionJSON));
-    formData.append('img', img);
+    formData.append('img', linkImg);
     
     if (!name || !desc || !positionJSON || !img) {
       setError(true)
@@ -63,9 +64,23 @@ export default function AddCard({ positionState }) {
   refreshPlaces()
  }
 
+   async function UploadImg(img) {
+    const formUpload = new FormData();
+    formUpload.append("file", img)
+    formUpload.append("upload_preset", "sensor_preset")
+
+    const res = await fetch('https://api.cloudinary.com/v1_1/PureSpace/image/upload', {
+      method: 'POST',
+      body: UploadImg
+    })
+     const data = await res.json();
+     return data.secure_url;
+    
+   }
+
     function handlePosition() {
      setState(true)
-     
+     console.log('buggg')
       document.body.style.cursor = 'crosshair';
     }
 
@@ -75,12 +90,14 @@ export default function AddCard({ positionState }) {
       return  
      }
       else {
+       console.log('buggg')
        setState(false)
        setStatePX({ ...positionState });
        document.body.style.cursor = 'default'
       
       } 
-     },[positionState, state])    
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+     },[positionState])    
      
     if (sucess) {
       return (

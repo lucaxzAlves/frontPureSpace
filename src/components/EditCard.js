@@ -74,12 +74,12 @@ export default function EditCard({ sensorId, positionState }) {
       return  
      }
       else {
-       setState(false)
+       //setState(false)
        setStatePX({ ...positionState });
        document.body.style.cursor = 'default'
       
-      } 
-     },[positionState, state])    
+      } // eslint-disable-next-line react-hooks/exhaustive-deps
+     },[positionState])    
      
 if (sucess) {
       return (
