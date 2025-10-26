@@ -35,11 +35,11 @@ export default function EditCard({ sensorId, positionState }) {
     : { left : `${positionPX.left}vw`,
         top : `${positionPX.top}vh`}
     
-    const Finalimg = (!img)
-    ? placeInfo.img
-    : img
-    
-   
+    let Finalimg = placeInfo.img
+    if(img) {
+      Finalimg = await UploadImg(img)
+    }
+     
 
     const formData = new FormData();
     formData.append('id', sensorId);
@@ -62,6 +62,23 @@ export default function EditCard({ sensorId, positionState }) {
   setSucess(true)
  }
 
+ 
+   async function UploadImg(img) {
+    const formUpload = new FormData();
+    formUpload.append("file", img)
+    formUpload.append("upload_preset", "sensor_preset")
+
+
+
+    const res = await fetch('https://api.cloudinary.com/v1_1/PureSpace/image/upload', {
+      method: 'POST',
+      body: formUpload
+    }) 
+     const data = await res.json();
+     return data.secure_url;
+    
+   }
+
     function handlePosition() {
      setState(true)
      
@@ -74,12 +91,15 @@ export default function EditCard({ sensorId, positionState }) {
       return  
      }
       else {
-       //setState(false)
+       setState(false)
        setStatePX({ ...positionState });
        document.body.style.cursor = 'default'
       
       } // eslint-disable-next-line react-hooks/exhaustive-deps
      },[positionState])    
+     
+
+
      
 if (sucess) {
       return (
