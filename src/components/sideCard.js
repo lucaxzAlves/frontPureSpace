@@ -28,7 +28,7 @@ export default function SideCard({ places, Id, position }) {
       
       setTimeout(() => {
         setAnimateClass('animation');
-      }, 10);  
+      }, 0);  
     }
   }, [Id]);
 
@@ -53,6 +53,7 @@ export default function SideCard({ places, Id, position }) {
 
 
   if (!data || !placeInfo) {
+        
     return <div className="control">
       <div className="btnRow-notfound">
          <div><FontAwesomeIcon className="infosBtn" onClick={() => {setId('-3')}} icon={faEdit} /></div>
@@ -60,7 +61,8 @@ export default function SideCard({ places, Id, position }) {
         </div>
         <img className="svg2" src="assets/undraw_questions_g2px.svg" alt="" />
         <p className="p2">Nenhuma informação encontrada.</p>
-      </div>;
+      </div>; 
+    
   }
 
   const { avaliationTemp, avaliationHum, avaliation_c02 } = avaliacao_Atual(data.temp, data.hum, data.ppm);
@@ -99,7 +101,7 @@ export default function SideCard({ places, Id, position }) {
         <p className="avaliacao-temp-atual">avaliação: {avaliationTemp}</p>
         <h2 className="infos-hum">Umidade atual do ar: {data.hum}% 💧</h2>
         <p className="avaliacao-hum-atual">avaliação: {avaliationHum}</p>
-        <h2 className="infos-hum">Qualidade do ar: {avaliation_c02}🍃</h2>
+        <h2 className="infos-hum">Qualidade do ar🍃: {avaliation_c02}</h2>
         <button className="moreInfos"onClick={() => document.getElementById('avaliation-card').scrollIntoView({ behavior: 'smooth' })}>Informações mais detalhadas</button>
       </div>
     </>

@@ -40,14 +40,6 @@ export default function EditCard({ sensorId, positionState }) {
       Finalimg = await UploadImg(img)
     }
      
-
-    const formData = new FormData();
-    formData.append('id', sensorId);
-    formData.append('name', name);
-    formData.append('desc', desc);
-    formData.append('position', JSON.stringify(positionJSON));
-    formData.append('img', Finalimg);
-    
     if (!name || !desc || !positionJSON) {
       return
     }
@@ -56,7 +48,14 @@ export default function EditCard({ sensorId, positionState }) {
  
     await fetch('https://back-pure-space.vercel.app/update/places', {
         method: 'PATCH',
-        body: formData
+        headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id: sensorId,
+      name,
+      desc,
+      position: positionJSON,
+      img: Finalimg
+    })
   })
   refreshPlaces()
   setSucess(true)

@@ -16,7 +16,7 @@ export default function Chart({ id, dataKey, date }) {
 
  const fetchData = async () => {
   try {
-    const response = await fetch(`https://back-pure-space.vercel.app/api/medias${date}/${id}?timestamp=${Date.now()}`);
+    const response = await fetch(`https://back-pure-space.vercel.app/api/medias${date}/${id}`);
     const dataMedia = await response.json();
 
   
@@ -63,14 +63,7 @@ export default function Chart({ id, dataKey, date }) {
 };
   useEffect(() => {
     fetchData(); 
-
-    
-
-    const interval = setInterval(() => {
-      fetchData();
-    }, 3000);
-
-    return () => clearInterval(interval); 
+    console.log("rodou o effect")
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, date, dataKey]);
 

@@ -13,11 +13,11 @@ export function avaliacao_Atual(temp, umidade, ppm) {
 } else if (temp >= 20 && temp < 24) {
   avaliação = "confortável";
 } else if (temp >= 24 && temp < 27) {
-  avaliação = "levemente quente";
+  avaliação = "normal";
 } else if (temp >= 27 && temp <= 35) {
   avaliação = "quente";
 } else if (temp >= 35 && temp < 40) {
-  avaliação = "extremamente quente";
+  avaliação = "muito quente";
 } else if (temp >= 40) {
   avaliação = "insalubre";
 } else {
@@ -33,24 +33,24 @@ if (umidade < 20) {
   } else if (umidade >= 30 && umidade < 50) {
     avaliação_umid = "confortável";
   } else if (umidade >= 50 && umidade < 60) {
-    avaliação_umid = "levemente umido";
+    avaliação_umid = "um pouco umido";
   } else if (umidade >= 60 && umidade <= 70) {
     avaliação_umid = "umido";
   } else if (umidade >= 70 && umidade < 80) {
     avaliação_umid = "muito umido";
   } else if (umidade >= 80) {
-    avaliação_umid = "extremamente umido";
+    avaliação_umid = "bastante umido";
   } else {
     avaliação_umid = "sem valor";
   }
   if(ppm<600) {
-    avaliacao_c02 = 'Ar externo limpo'
+    avaliacao_c02 = 'limpo'
   } else if(ppm >= 600 && ppm < 1000) {
-    avaliacao_c02 = 'Ar interno razoável'
+    avaliacao_c02 = 'razoável'
   } else if(ppm >= 1000 && ppm < 2000) {
-    avaliacao_c02 = 'Ar viciado, precisa ventilar'
+    avaliacao_c02 = 'viciado'
   } else if(ppm >= 2000) {
-    avaliacao_c02 = 'Alerta, ambiente perigoso'
+    avaliacao_c02 = 'ambiente perigoso'
   } 
  return {
   avaliationTemp: avaliação,  

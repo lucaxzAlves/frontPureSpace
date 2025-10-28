@@ -33,21 +33,16 @@ export default function AddCard({ positionState }) {
 
 
     const lastId = Number(places[places.length-1].id)
-    const id = lastId+1
-    
+    const numid = lastId+1
+    const id = numid.toString()
+
    const positionJSON = {}
 
     positionJSON.left = `${positionPX.left}vw`
     positionJSON.top = `${positionPX.top}vh`
     
     const linkImg = await UploadImg(img)
-
-    const formData = new FormData();
-    formData.append('id', id.toString());
-    formData.append('name', name);
-    formData.append('desc', desc);
-    formData.append('position', JSON.stringify(positionJSON));
-    formData.append('img', linkImg);
+    console.log(linkImg)
     
     if (!name || !desc || !positionJSON || !img) {
       setError(true)
@@ -58,7 +53,14 @@ export default function AddCard({ positionState }) {
  
     await fetch('https://back-pure-space.vercel.app/send/places', {
         method: 'POST',
-        body: formData
+         headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id,
+      name,
+      desc,
+      position: positionJSON,
+      img: linkImg
+    })
   }) 
   setSucess(true)
   refreshPlaces()
@@ -69,18 +71,19 @@ export default function AddCard({ positionState }) {
     formUpload.append("file", img)
     formUpload.append("upload_preset", "sensor_preset")
 
-    const res = await fetch('https://api.cloudinary.com/v1_1/PureSpace/image/upload', {
+    const res = await fetch('https://api.cloudinary.com/v1_1/dbcpgtqe8/image/upload', {
       method: 'POST',
-      body: UploadImg
+      body:  formUpload
     })
      const data = await res.json();
+
      return data.secure_url;
-    
+     
    }
 
     function handlePosition() {
      setState(true)
-     console.log('buggg')
+     
       document.body.style.cursor = 'crosshair';
     }
 
@@ -90,7 +93,6 @@ export default function AddCard({ positionState }) {
       return  
      }
       else {
-       console.log('buggg')
        setState(false)
        setStatePX({ ...positionState });
        document.body.style.cursor = 'default'

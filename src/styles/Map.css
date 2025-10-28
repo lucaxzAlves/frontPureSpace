@@ -11,11 +11,11 @@
 
 @keyframes card_animation {
     0% {
-        right: -200px;
+        top: -200px;
         opacity: 0;
     }
     100% {
-        right: 0px;
+        top: 0px;
         opacity: 1;
     }
 }
